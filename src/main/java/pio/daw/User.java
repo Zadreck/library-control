@@ -23,7 +23,7 @@ public class User implements Localizable {
     }
 
     /**
-     * Register a new event for this user. Follows rules:
+     * Process an event for this user. Follows rules:
      * - ENTRY when already inside -> ignored
      * - ENTRY when outside -> becomes inside and entries++
      * - EXIT when outside -> ignored
