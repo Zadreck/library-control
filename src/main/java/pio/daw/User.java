@@ -18,7 +18,7 @@ public class User implements Localizable {
         return this.inside;
     }
 
-    public int getEntries(){
+    public int getNEntries(){
         return this.entries;
     }
 
@@ -41,11 +41,7 @@ public class User implements Localizable {
             if (this.inside){
                 this.inside = false;
                 this.lasEvent = e;
+                }
             }
         }
     }
-
-    public int getNEntries() {
-        return this.getEntries();
-    }
-}

@@ -71,14 +71,14 @@ public class Library implements Controlable {
         List<User> res = new ArrayList<>();
         int max = 0;
         for (User u : this.users.values()){
-            int e = u.getEntries();
+            int e = u.getNEntries();
             if (e > max){
                 max = e;
             }
         }
         if (max == 0) return res;
         for (User u : this.users.values()){
-            if (u.getEntries() == max) res.add(u);
+            if (u.getNEntries() == max) res.add(u);
         }
         Collections.sort(res, (a,b) -> a.getId().compareTo(b.getId()));
         return res;
@@ -88,7 +88,7 @@ public class Library implements Controlable {
     public List<User> getUserList(){
         List<User> res = new ArrayList<>();
         for (User u : this.users.values()){
-            if (u.getEntries() > 0) res.add(u);
+            if (u.getNEntries() > 0) res.add(u);
         }
         Collections.sort(res, (a,b) -> a.getId().compareTo(b.getId()));
         return res;
@@ -105,7 +105,7 @@ public class Library implements Controlable {
         sb.append("\n");
         sb.append("Número de entradas por usuario:\n");
         for (User u : getUserList()){
-            sb.append(u.getId()).append(" -> ").append(u.getEntries()).append("\n");
+            sb.append(u.getId()).append(" -> ").append(u.getNEntries()).append("\n");
         }
 
         sb.append("\n");
